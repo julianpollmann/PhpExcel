@@ -2,7 +2,7 @@
 /**
  * PHPExcel
  *
- * Copyright (c) 2006 - 2013 PHPExcel
+ * Copyright (c) 2006 - 2014 PHPExcel
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -20,7 +20,7 @@
  *
  * @category	PHPExcel
  * @package		PHPExcel_Calculation
- * @copyright	Copyright (c) 2006 - 2013 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @copyright	Copyright (c) 2006 - 2014 PHPExcel (http://www.codeplex.com/PHPExcel)
  * @license		http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt	LGPL
  * @version		##VERSION##, ##DATE##
  */
@@ -41,7 +41,7 @@ if (!defined('PHPEXCEL_ROOT')) {
  *
  * @category	PHPExcel
  * @package		PHPExcel_Calculation
- * @copyright	Copyright (c) 2006 - 2013 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @copyright	Copyright (c) 2006 - 2014 PHPExcel (http://www.codeplex.com/PHPExcel)
  */
 class PHPExcel_Calculation_LookupRef {
 
@@ -735,11 +735,7 @@ class PHPExcel_Calculation_LookupRef {
 				return PHPExcel_Calculation_Functions::NA();
 			} else {
 				//	otherwise return the appropriate value
-				$result = $lookup_array[$rowNumber][$returnColumn];
-				if ((is_numeric($lookup_value) && is_numeric($result)) ||
-					(!is_numeric($lookup_value) && !is_numeric($result))) {
-					return $result;
-				}
+				return $lookup_array[$rowNumber][$returnColumn];
 			}
 		}
 
@@ -802,8 +798,7 @@ class PHPExcel_Calculation_LookupRef {
                 return PHPExcel_Calculation_Functions::NA();
             } else {
                 //  otherwise return the appropriate value
-                $result = $lookup_array[$returnColumn][$rowNumber];
-				return $result;
+                return $lookup_array[$returnColumn][$rowNumber];
             }
         }
 
